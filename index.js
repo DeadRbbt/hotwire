@@ -25,7 +25,7 @@
         
     // Drawing on the canvas
 
-    var ballRad = ((width * height) / 30000);
+    var ballRad = ((width * height) / 35000);
     var ballx = width/2;
     var bally = height/2;
     var ctxcC = cC.getContext("2d");
@@ -42,8 +42,20 @@
     drawWire(width*0.1, height*0.1, width*0.5, height*0.05, width*0.851, height*0.1);
     drawWire(width*0.849, height*0.1, width*0.95, height*0.15, width*0.85, height*0.252);
     drawWire(width*0.852, height*0.25, width*0.5, height*0.3, width*0.25, height*0.23);
-    drawWire(width*0.25, height*0.23, width*0.1, height*0.2, width*0.2, height*0.38);
-
+    drawWire(width*0.25, height*0.23, width*0.1, height*0.2, width*0.201, height*0.381);
+    drawWire(width*0.2, height*0.379, width*0.3, height*0.5, width*0.15, height*0.5);
+    drawWire(width*0.15, height*0.5, width*0.0, height*0.5, width*0.15, height*0.6);
+    drawWire(width*0.149, height*0.599, width*0.25, height*0.7, width*0.38, height*0.6);
+    drawWire(width*0.38, height*0.601, width*0.45, height*0.5, width*0.4, height*0.43);
+    drawWire(width*0.401, height*0.4301, width*0.3, height*0.33, width*0.53, height*0.35);
+    drawWire(width*0.529, height*0.35, width*0.7, height*0.33, width*0.8, height*0.4);
+    drawWire(width*0.8, height*0.4, width*0.9, height*0.5, width*0.9, height*0.6);
+    drawWire(width*0.9, height*0.599, width*0.9, height*0.8, width*0.68, height*0.65);
+    drawWire(width*0.681, height*0.651, width*0.55, height*0.55, width*0.5, height*0.7);
+    drawWire(width*0.5, height*0.7, width*0.48, height*0.75, width*0.53, height*0.75);
+    drawWire(width*0.529, height*0.75, width*0.8, height*0.76, width*0.86, height*0.87);
+    drawWire(width*0.86, height*0.87, width*0.9, height*0.99, width*0.4, height*0.83);
+    drawWire(width*0.401, height*0.831, width*0.1, height*0.6, width*0.1, height*0.95);
 
     var collision = true;
     // Storage for the starting quaternion rotation we compare against.
@@ -79,11 +91,16 @@
             ctxcC.strokeStyle = '#FF0000';
             var distToStart = (Math.hypot(Math.abs(ballx-width*0.1), Math.abs(bally-height*0.1)));
             
-            console.log(distToStart);
             if (distToStart < ballRad) {
                 collision = false;
                 ctxcC.strokeStyle = '#00FF00';
-            }   
+            }
+
+            var distToGoal = (Math.hypot(Math.abs(ballx-width*0.1), Math.abs(bally-height*0.95)));
+            if (distToGoal < ballRad) {
+                collision = false;
+                ctxcC.strokeStyle = '#0000FF';
+            }    
         }
 
         // Draw ball if inside view
