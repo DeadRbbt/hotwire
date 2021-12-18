@@ -1,0 +1,11 @@
+{
+    "livePreview.defaultPreviewPath": "/index.html",
+    "liveServer.settings.port": 5502,
+    "liveServer.settings.CustomBrowser": "chrome",
+    "liveServer.settings.https": {
+      "enable": true,
+      "cert": "C:/Users/domin/mc.pem",
+      "key": "C:/Users/domin/mc.key",
+      "passphrase": "12345"
+    }
+}

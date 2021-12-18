@@ -1,0 +1,5 @@
+#canvas {position:fixed; margin: 0; padding:0}
+#canvasCircle {z-index: 0}
+#canvasWire {position: absolute; left: 0; top: 0; z-index: 1}
+#overlay {position:absolute; top:10px; left:10px}
+body {display:block; margin:0}
