@@ -57,7 +57,8 @@
     drawWire(width*0.86, height*0.87, width*0.9, height*0.99, width*0.4, height*0.83);
     drawWire(width*0.401, height*0.831, width*0.1, height*0.6, width*0.1, height*0.95);
 
-    var collision = true;
+    var collision = 1;
+    ctxcC.strokeStyle = '#FF0000';
     // Storage for the starting quaternion rotation we compare against.
     
     var _qstart = null;
@@ -86,21 +87,20 @@
         document.getElementById("y").innerHTML = dy;
 
         // restarts the game if the ball is at the starting point
-        if (collision == true)  {
-            console.log(collision);
-            ctxcC.strokeStyle = '#FF0000';
+        if (collision == 1 | collision == 2)  {
             var distToStart = (Math.hypot(Math.abs(ballx-width*0.1), Math.abs(bally-height*0.1)));
             
             if (distToStart < ballRad) {
-                collision = false;
+                collision = 0;
                 ctxcC.strokeStyle = '#00FF00';
             }
-
+              
+        } else if (collision == 0) {
             var distToGoal = (Math.hypot(Math.abs(ballx-width*0.1), Math.abs(bally-height*0.95)));
             if (distToGoal < ballRad) {
-                collision = false;
                 ctxcC.strokeStyle = '#0000FF';
-            }    
+                collision = 2;
+            }  
         }
 
         // Draw ball if inside view
@@ -158,7 +158,9 @@
         ctxcC.lineWidth = 10;
         ctxcC.arc(x, y, ballRad, 0, 2 * Math.PI);
         ctxcC.stroke();
-        detectCollision(wireCoords);
+        if(collision == 0){
+            detectCollision(wireCoords);
+        }  
     }
 
     // draws wire, gets wire coordinates and safes them in array wireCoords
@@ -212,13 +214,14 @@
         }
 
         if (minDist > ballRad) {
-            collision = true;
+            collision = 1;
+            ctxcC.strokeStyle = '#FF0000';
         }
         
     }
 
     function resetWireIfAtStart() {
-        if (collision == false) {
+        if (collision == 0) {
             ctxcC.strokeStyle = '#00FF00';
             console.log(collision);
         } else {
@@ -227,7 +230,7 @@
             var c = (Math.hypot(Math.abs(ballx-width*0.1), Math.abs(bally-height*0.1)));
     
             if (c < ballRad) {
-                collision = false;
+                collision = 0;
             }
         }
     }
