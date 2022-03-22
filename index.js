@@ -15,8 +15,8 @@
     var width = Math.max(body.scrollWidth, body.offsetWidth, 
                         html.clientWidth, html.scrollWidth, html.offsetWidth);
 
-    document.getElementById("width").innerHTML = width;
-    document.getElementById("height").innerHTML = height;
+    // document.getElementById("width").innerHTML = width;
+    // document.getElementById("height").innerHTML = height;
 
     cC.height = height;
     cW.height = height;
@@ -81,10 +81,10 @@
         ballx = (rdz + 35) * width / 70;
         bally = (rdy + 50) * height / 100;
 
-        document.getElementById("posx").innerHTML = ballx;
-        document.getElementById("posy").innerHTML = bally;
-        document.getElementById("x").innerHTML = dz;    
-        document.getElementById("y").innerHTML = dy;
+        // document.getElementById("posx").innerHTML = ballx;
+        // document.getElementById("posy").innerHTML = bally;
+        // document.getElementById("x").innerHTML = dz;    
+        // document.getElementById("y").innerHTML = dy;
 
         // restarts the game if the ball is at the starting point
         if (collision == 1 | collision == 2)  {
