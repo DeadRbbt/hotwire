@@ -40,6 +40,10 @@
 
     // Draws all hot wires and calculates coordinates along the wire for collision detection
     drawWire(width*0.1, height*0.1, width*0.5, height*0.05, width*0.851, height*0.1);
+    ctxcW.fillStyle = "#00FF00";
+    ctxcW.beginPath();
+    ctxcW.arc(width*0.1, height*0.1, 20, 0, 2 * Math.PI);
+    ctxcW.fill();
     drawWire(width*0.849, height*0.1, width*0.95, height*0.15, width*0.85, height*0.252);
     drawWire(width*0.852, height*0.25, width*0.5, height*0.3, width*0.25, height*0.23);
     drawWire(width*0.25, height*0.23, width*0.1, height*0.2, width*0.201, height*0.381);
@@ -56,6 +60,10 @@
     drawWire(width*0.529, height*0.75, width*0.8, height*0.76, width*0.86, height*0.87);
     drawWire(width*0.86, height*0.87, width*0.9, height*0.99, width*0.4, height*0.83);
     drawWire(width*0.401, height*0.831, width*0.1, height*0.6, width*0.1, height*0.95);
+    ctxcW.fillStyle = "#0000FF";
+    ctxcW.beginPath();
+    ctxcW.arc(width*0.1, height*0.95, 20, 0, 2 * Math.PI);
+    ctxcW.fill();
 
     var collision = 1;
     ctxcC.strokeStyle = '#FF0000';
